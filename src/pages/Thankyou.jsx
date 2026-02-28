@@ -1,0 +1,17 @@
+export default function Thankyou() {
+    return (
+        <div className="flex flex-col items-center justify-center text-sm max-md:px-4 mt-16">
+            <p className="text-8xl md:text-9xl font-bold text-indigo-500">Thank You</p>
+            <div className="h-1 w-16 rounded bg-indigo-500 my-5 md:my-7"></div>
+            <p className="text-sm md:text-base mt-4 text-gray-500 max-w-md text-center">Your submission has been received successfully. Our team will review the details and get back to you if needed.</p>
+            <div className="flex items-center gap-4 mt-6">
+                <a href="/" className="bg-gray-800 hover:bg-black px-7 py-2.5 text-white rounded-md active:scale-95 transition-all">
+                    Return Home
+                </a>
+                <a href="/contact" className="border border-gray-300 px-7 py-2.5 text-gray-800 rounded-md active:scale-95 transition-all">
+                    Contact support
+                </a>
+            </div>
+        </div>
+    );
+};
