@@ -10,16 +10,16 @@ const GrampanchayatPrashsan = () => {
   const bigMembers = member.filter(
     (item) =>
       item.isActive &&
-      (item.role === "Sarpanch" ||
-        item.role === "Upasarpanch" ||
+      (item.role === "सरपंच" ||
+        item.role === "उपसरपंच" ||
         item.role === "ग्रामारोजगार सेवक"),
   );
 
   const smallMembers = member.filter(
     (item) =>
       item.isActive &&
-      item.role !== "Sarpanch" &&
-      item.role !== "Upasarpanch" &&
+      item.role !== "सरपंच" &&
+      item.role !== "उपसरपंच" &&
       item.role !== "ग्रामारोजगार सेवक",
   );
 
@@ -62,19 +62,15 @@ const GrampanchayatPrashsan = () => {
       <div className="grampanchayatmain bg-white bg-dot px-5 py-[90px]">
         <SectionHeader title="ग्रामपंचायत प्रशासन" classname="mb-[60px]" />
         <div className="m-auto flex flex-wrap gap-[40px] justify-center">
-          {bigMembers.length > 0 ? (
+          {bigMembers.length > 0 && (
             bigMembers.map((item) => <BigCards key={item._id} data={item} />)
-          ) : (
-            <p>Active nhi</p>
-          )}
+          ) }
         </div>
         <div className="mt-12 flex justify-center gap-5 flex-wrap">
-          {smallMembers.length > 0 ? (
+          {smallMembers.length > 0 && (
             smallMembers.map((item) => (
               <Smallcards key={item._id} data={item} />
             ))
-          ) : (
-            <p>Active nhi</p>
           )}
         </div>
       </div>

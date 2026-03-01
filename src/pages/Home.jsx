@@ -237,7 +237,7 @@ const Home = () => {
               //   backgroundPosition: "center",
               // }}
             >
-              <img src={slide.image} className="absolute inset-0" alt="" />
+              <img src={slide.image} className="absolute inset-0 w-full h-full object-cover" alt="" />
 
               {/* overlay */}
               <div className="absolute inset-0 bg-black/50"></div>

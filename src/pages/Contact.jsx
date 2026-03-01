@@ -75,7 +75,13 @@ const handleSubmit = async (e) => {
 
             <ul className="space-y-4 text-sm">
               <li>📞 +91 9421477822</li>
-              <li>✉️ gppalsun2014@gmail.com</li>
+              <li>✉️       <a
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=gppalsun2014@gmail.com"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    gppalsun2014@gmail.com
+  </a></li>
               <li>📍 ग्रामपंचायत कार्यालय, पळसुन</li>
               <li>🗺️ तालुका - नवापूर</li>
               <li>🌐 जिल्हा - नंदुरबार</li>

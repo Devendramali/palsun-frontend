@@ -30,7 +30,13 @@ const Topnav = () => {
           </span>
 
           <span className="flex items-center gap-2 break-all text-center text-sm sm:text-base lg:text-left lg:text-[16px]">
-            <IoMail /> <span className="text-sm sm:text-base lg:text-[13px]">gppalsun2014@gmail.com</span>
+            <IoMail /> <span className="text-sm sm:text-base lg:text-[13px]">  <a
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=gppalsun2014@gmail.com"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    gppalsun2014@gmail.com
+  </a></span>
           </span>
 
           <span className="flex items-center gap-2 text-sm sm:text-base lg:text-[16px]">
@@ -38,7 +44,7 @@ const Topnav = () => {
           </span>
 
           {/* ICONS */}
-          <div className="flex gap-3">
+          {/* <div className="flex gap-3">
             <NavLink
               to="/login"
               className="bg-orange-500 text-white w-8 h-8 flex justify-center items-center rounded-full"
@@ -46,13 +52,9 @@ const Topnav = () => {
               <RiLoginCircleLine />
             </NavLink>
 
-            {/* <button
-            className="bg-[#003366] text-white text-sm w-10 h-8 rounded-full"
-          >
-            Eng
-          </button> */}
+          
 
-          </div>
+          </div> */}
 
         </div>
       </div>

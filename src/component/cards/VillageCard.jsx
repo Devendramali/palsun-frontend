@@ -26,7 +26,7 @@ const VillageCard = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {events.length > 0 ? (
           events.slice(0, 3).map((item) => (   // 👈 फक्त 3 cards
-            <div
+            <a href="/village-programs"
               key={item.id}
               className="relative rounded-2xl overflow-hidden shadow-lg group"
             >
@@ -51,7 +51,7 @@ const VillageCard = () => {
                 </button>
                 </div>
               </div>
-            </div>
+            </a>
           ))
         ) : (
           <div className="flex justify-center items-center col-span-3">
