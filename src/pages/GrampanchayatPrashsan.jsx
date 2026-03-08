@@ -59,8 +59,8 @@ const GrampanchayatPrashsan = () => {
   }, []);
   return (
     <>
-      <div className="grampanchayatmain bg-white bg-dot px-5 py-[90px]">
-        <SectionHeader title="ग्रामपंचायत प्रशासन" classname="mb-[60px]" />
+      <div className="grampanchayatmain bg-white bg-dot px-5 py-10 sm:py-[25px] md:py-[50px] lg:py-[90px]">
+        <SectionHeader title="ग्रामपंचायत प्रशासन" classname="mb-4 sm:mb-[30px] md:mb-[40px] lg:mb-[60px]" />
         <div className="m-auto flex flex-wrap gap-[40px] justify-center">
           {bigMembers.length > 0 && (
             bigMembers.map((item) => <BigCards key={item._id} data={item} />)
@@ -75,7 +75,7 @@ const GrampanchayatPrashsan = () => {
         </div>
       </div>
 
-      <div className="bg-white py-[90px]">
+      <div className="bg-white py-10 sm:py-[25px] md:py-[50px] lg:py-[90px]">
         <div className="max-w-[1000px] mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
           <div className="md:col-span-7 col-span-12">
             <SectionHeader title="शासकीय शाळा मराठी" classname="mb-[30px]" />

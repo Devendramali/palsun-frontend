@@ -13,7 +13,7 @@ const Gallery = () => {
   // fetch gallery from backend
   useEffect(() => {
     API.get("/gallery")
-      .then((res) => { 
+      .then((res) => {
         // फक्त active items
         const activeItems = res.data.filter((item) => item.isActive);
         setGalleryItems(activeItems);
@@ -58,9 +58,10 @@ const Gallery = () => {
           </div>
 
           {/* GRID */}
+          {/* GRID */}
           <div className="grid grid-cols-1 justify-center md:grid-cols-3 lg:grid-cols-4 gap-5">
             {filteredItems.map((item) => {
-              // फोटो item
+              // PHOTO
               if (item.type === "photo") {
                 return (
                   <div
@@ -72,7 +73,7 @@ const Gallery = () => {
                       onClick={() => setPopupItem(item)}
                     >
                       <img
-                        src={`${item.file}`}
+                        src={item.file}
                         alt={item.title}
                         className="w-full h-[300px] object-cover transition-transform duration-500 group-hover:scale-110"
                       />
@@ -85,7 +86,7 @@ const Gallery = () => {
                 );
               }
 
-              // व्हिडिओ item (future use)
+              // VIDEO
               return (
                 <div
                   key={item._id}
@@ -95,11 +96,12 @@ const Gallery = () => {
                     className="relative overflow-hidden rounded-t-xl cursor-pointer group"
                     onClick={() => setPopupItem(item)}
                   >
-                    <img
-                      src={`${item.file}`} // thumbnail म्हणून imageच वापरतोय
-                      alt={item.title}
+                    <video
+                      src={item.file}
                       className="w-full h-[300px] object-cover"
+                      muted
                     />
+
                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                       <Play size={40} color="#fff" />
                     </div>
@@ -134,13 +136,24 @@ const Gallery = () => {
             </button>
 
             {/* PHOTO VIEW */}
-            {popupItem.type === "photo" && (
-              <img
-                src={`${popupItem.file}`}
-                alt={popupItem.title}
-                className="w-full max-h-[80vh] object-contain rounded-xl bg-black"
-              />
-            )}
+            {/* PHOTO VIEW */}
+{popupItem.type === "photo" && (
+  <img
+    src={popupItem.file}
+    alt={popupItem.title}
+    className="w-full max-h-[80vh] object-contain rounded-xl bg-black"
+  />
+)}
+
+{/* VIDEO VIEW */}
+{popupItem.type === "video" && (
+  <video
+    src={popupItem.file}
+    controls
+    autoPlay
+    className="w-full max-h-[80vh] rounded-xl"
+  />
+)}
 
             {/* VIDEO VIEW (जर backend videoUrl देईल तर) */}
             {popupItem.type === "video" && popupItem.videoUrl && (

@@ -13,63 +13,6 @@ import Card from "../component/cards/Card";
 import Button from "../component/cards/Button";
 import API from "../api/api";
 
-// const members = [
-//   {
-//     name: "जयकुमार गोरे",
-//     post: "माननीय मंत्री, ग्रामविकास व पंचायत राज विभाग",
-//     img: "/q.webp",
-//   },
-//   {
-//     name: "एकनाथ शिंदे",
-//     post: "माननीय उपमुख्यमंत्री",
-//     img: "/w.webp",
-//   },
-//   {
-//     name: "देवेंद्र फडणवीस",
-//     post: "माननीय मुख्यमंत्री",
-//     img: "/e.webp",
-//   },
-//   {
-//     name: "अजित पवार",
-//     post: "माननीय उपमुख्यमंत्री",
-//     img: "/r.jpg",
-//   },
-//   {
-//     name: "योगेश कदम",
-//     post: "माननीय राज्यमंत्री, ग्रामविकास व पंचायत राज विभाग",
-//     img: "/t.webp",
-//   },
-//   {
-//     name: "एकनाथ डवले",
-//     post: "प्रधान सचिव, ग्रामविकास व पंचायत राज विभाग",
-//     img: "/y.webp",
-//   },
-//   {
-//     name: "डॉ. प्रविण जाधव",
-//     post: "विभागीय आयुक्त (नाशिक)",
-//     img: "/u.jpg",
-//   },
-// ];
-
-//   {
-//     image: "./member/slider1.webp",
-//     title: "ग्रामपंचायत",
-//     subtitle: "पळसुन",
-//     desc: "शाश्वत विकासाच्या दिशेने, गावातील प्रत्येक नागरिकाच्या सहभागातून, शिक्षण, आरोग्य, पाणी, स्वच्छता, आणि डिजिटायझेशन यांचा समन्वय साधत ,गाव घडवण्यासाठी कटीबद्ध एक सक्षम ग्रामपंचायत.",
-//   },
-//   {
-//     image: "./member/slider2.webp",
-//     title: "ग्रामपंचायत",
-//     subtitle: "पळसुन",
-//     desc: "शाश्वत विकासाच्या दिशेने, गावातील प्रत्येक नागरिकाच्या सहभागातून, शिक्षण, आरोग्य, पाणी, स्वच्छता, आणि डिजिटायझेशन यांचा समन्वय साधत ,गाव घडवण्यासाठी कटीबद्ध एक सक्षम ग्रामपंचायत.",
-//   },
-//   {
-//     image: "./member/slider3.webp",
-//     title: "ग्रामपंचायत",
-//     subtitle: "पळसुन",
-//     desc: "शाश्वत विकासाच्या दिशेने, गावातील प्रत्येक नागरिकाच्या सहभागातून, शिक्षण, आरोग्य, पाणी, स्वच्छता, आणि डिजिटायझेशन यांचा समन्वय साधत ,गाव घडवण्यासाठी कटीबद्ध एक सक्षम ग्रामपंचायत.",
-//   },
-// ];
 
 const cards = [
   {
@@ -143,7 +86,7 @@ const Home = () => {
   const administration = member.filter(
     (item) =>
       item.isActive &&
-      (item.role === "Sarpanch" || item.role === "Upasarpanch"),
+      (item.role === "सरपंच" || item.role === "उपसरपंच"),
   );
 
   useEffect(() => {
@@ -156,8 +99,6 @@ const Home = () => {
         console.error("Members fetch error:", err);
       });
   }, []);
-
-  
 
   // आमचे प्रशासकीय अधिकारी
   const [officers, setOfficers] = useState([]);
@@ -223,7 +164,7 @@ const Home = () => {
   }, []);
   return (
     <>
-      <div className="relative w-full aspect-[calc(2*3+1)/3] overflow-hidden">
+      <div className="relative w-full h-[350px] sm:h-full md:h-[400px] lg:h-full aspect-[calc(2*3+1)/3] overflow-hidden">
         {activeSlide.length > 0 ? (
           activeSlide.map((slide, index) => (
             <div
@@ -244,26 +185,26 @@ const Home = () => {
 
               {/* content */}
               <div className="absolute left-6 md:left-16 bottom-24 text-white max-w-xl">
-                <h4 className="text-[30px] font-bold mb-2">ग्रामपंचायत</h4>
+                <h4 className="text-lg md:text-2xl lg:text-3xl font-bold mb-2">ग्रामपंचायत</h4>
                 {/* <h3>{`${slide.image}`}</h3> */}
-                <h1 className="text-[100px] md:text-5xl font-bold mb-4">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4">
                   पळसुन
                 </h1>
-                <p className="text-sm md:text-base leading-relaxed">
+                <p className="text-[13px] sm:text-[14px] md:text-[15px] lg:text-base leading-relaxed">
                   {slide.title}
                 </p>
-                <p className="text-sm md:text-base leading-relaxed">
+                <p className="text-[13px] sm:text-[14px] md:text-[15px] lg:text-base leading-relaxed">
                   {slide.subtitle}
                 </p>
                 <div className="flex gap-4">
-                  <p className="text-xs">
-                    <span className="text-xl font-bold text-orange-400">
+                  <p className="text-[13px] sm:text-[14px] md:text-[15px] lg:text-base">
+                    <span className="font-bold text-orange-400">
                       28 +{" "}
                     </span>
                     एकूण गाव कार्यक्रम
                   </p>
-                  <p className="text-xs">
-                    <span className="text-xl font-bold text-orange-400">
+                  <p className="text-[13px] sm:text-[14px] md:text-[15px] lg:text-base">
+                    <span className="font-bold text-orange-400">
                       0 +
                     </span>
                     गावाची लोकसंख्या
@@ -320,11 +261,11 @@ const Home = () => {
       </div>
 
       {/* -------- */}
-      <div className="max-w-[1300px] mx-auto px-4 py-16">
+      <div className="max-w-[1300px] mx-auto px-4 py-5 sm:py-10 md:py-15 lg:py-16">
         {/* FIRST ROW */}
         <SectionHeader
           title="माननीय मंत्री व पदाधिकारी"
-          classname="mb-[60px] underline1"
+          classname="mb-4 sm:mb-[30px] md:mb-[40px] lg:mb-[60px] underline1"
         />
         <div
           className="grid gap-6 
@@ -352,10 +293,10 @@ const Home = () => {
       </div>
       {/* ------------- */}
 
-      <div className="py-[60px] bg-[#fff]">
+      <div className="px-4 py-5 sm:py-10 md:py-15 lg:py-16 bg-[#fff]">
         <SectionHeader
           title="आमचे प्रशासकीय अधिकारी"
-          classname="mb-[60px] underline1"
+          classname="mb-4 sm:mb-[30px] md:mb-[40px] lg:mb-[60px] underline1"
         />
         <div className="m-auto flex justify-center gap-5">
           {officersList.length > 0 ? (
@@ -368,10 +309,10 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="grampanchayatmain px-6 bg-[#f6f7fa] py-[60px]">
+      <div className="grampanchayatmain px-6 bg-[#f6f7fa] px-4 py-5 sm:py-10 md:py-15 lg:py-16">
         <SectionHeader
           title="ग्रामपंचायतीचे माननीय सदस्य"
-          classname="mb-[60px] "
+          classname="mb-4 sm:mb-[30px] md:mb-[40px] lg:mb-[60px]"
         />
         <div className="m-auto max-w-[1000px] flex-wrap flex gap-[40px] justify-center">
           {administration.length > 0 ? (
@@ -389,7 +330,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="py-[60px] px-5 pb-[150px] bg-[#fff]">
+      <div className="px-4 py-8 sm:py-10 md:py-15 lg:py-16 px-5 bg-[#fff]">
         <div className="flex flex-col lg:flex-row max-w-[1200px] m-auto">
           <div className="py-5 lg:py-0">
             <span className="text-[14px]">आमच्याबद्दल जाणून घ्या</span>
@@ -422,7 +363,7 @@ const Home = () => {
 
       <div className="bg-gray-100 py-10">
         <div className="py-2">
-          <SectionHeader title="विशेष आकर्षणे" classname="mb-[60px]" />
+          <SectionHeader title="विशेष आकर्षणे" classname="sm:mb-[30px] md:mb-[40px] lg:mb-[60px]" />
         </div>
         <div className="w-full lg:px-15 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 px-5">
           {cards.map((card, index) => (
@@ -448,7 +389,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="bg-pink-50 py-[60px]">
+      <div className="bg-pink-50 px-4 pt-5 sm:py-10 md:py-15 lg:py-16">
         <div>
           <SectionHeader title="ग्रामपंचायतीच्या सूचना" classname="mb-[0px]" />
         </div>
@@ -532,67 +473,3 @@ const Home = () => {
 };
 
 export default Home;
-//   {
-//     id: 1,
-//     imgsrc: "./public/member/5.webp",
-//     title: "श्री.संतोषकुमार जयसिंग गवळी",
-//     position: "ग्रामपंचायत सदस्य, पळसुन ",
-//     contact: {
-//       number: 132648566,
-//     },
-//   },
-//   {
-//     id: 2,
-//     imgsrc: "./public/member/4.webp",
-//     title: "सौ.उषाबाई रतिलाल साळी",
-//     position: "ग्रामपंचायत सदस्य, पळसुन ",
-//     contact: {
-//       number: 132648566,
-//     },
-//   },
-//   {
-//     id: 3,
-//     imgsrc: "./public/member/3.webp",
-//     title: "सौ.अप्सराबाई अमरनाथ कोकणी",
-//     position: "ग्रामपंचायत सदस्य, पळसुन ",
-//     contact: {
-//       number: 132648566,
-//     },
-//   },
-//   {
-//     id: 4,
-//     imgsrc: "./user-circle.svg",
-//     title: "सौ.सुभद्रा विकास कोकणी ",
-//     position: "ग्रामपंचायत सदस्य, पळसुन ",
-//     contact: {
-//       number: 132648566,
-//     },
-//   },
-//   {
-//     id: 5,
-//     imgsrc: "./public/member/7.webp",
-//     title: "सौ.अस्मिता उपेंद्र कोकणी",
-//     position: "ग्रामपंचायत सदस्य, पळसुन ",
-//     contact: {
-//       number: 132648566,
-//     },
-//   },
-//   {
-//     id: 6,
-//     imgsrc: "./public/member/6.webp",
-//     title: "श्री.अमन बाबुलाल कोकणी",
-//     position: "ग्रामपंचायत सदस्य, पळसुन ",
-//     contact: {
-//       number: 132648566,
-//     },
-//   },
-//   {
-//     id: 7,
-//     imgsrc: "./user-circle.svg",
-//     title: "सौ.रेखाबाई आखात्या कोकणी",
-//     position: "ग्रामपंचायत सदस्य, पळसुन ",
-//     contact: {
-//       number: 132648566,
-//     },
-//   },
-// ];

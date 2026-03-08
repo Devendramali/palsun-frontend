@@ -54,7 +54,7 @@ const AboutUs = () => {
   }, []);
   return (
     <>
-      <div className="px-6 page py-[90px] bg-white">
+      <div className="px-6 page py-[20px] bg-white">
         <div className="max-w-[1100px] flex flex-col justify-center lg:flex-row m-auto gap-8 flex ">
           <div className="text-left">
             <MainHeading
@@ -116,7 +116,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        <div className="max-w-[1000px] py-[90px]  m-auto sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <div className="max-w-[1000px] py-10 sm:py-[25px] md:py-[50px] lg:py-[90px]  m-auto sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
           <div className="md:col-span-7 col-span-12">
             <SectionHeader title="स्थान आणि दळणवळण" classname="mb-[30px]" />
             <div className="flex justify-start flex-col items-start mb-5">
@@ -167,7 +167,7 @@ const AboutUs = () => {
         </div>
       </div>
       {/* completed */}
-      <div className="py-[60px] bg-[#f8f9fa]">
+      <div className=" bg-[#f8f9fa]">
         <SectionHeader
           title="आमचे प्रशासकीय अधिकारी"
           classname="mb-[60px] underline1"

@@ -19,7 +19,7 @@ const MahitiAdhikar = () => {
   }, []);
   return (
     <>
-      <div className="py-[90px]">
+      <div className="py-10 sm:py-[25px] md:py-[50px] lg:py-[90px]">
         <SectionHeader title="माहिती अधिकार"/>
 
         <div className="px-6 flex flex-wrap max-w-[1000px] m-auto justify-center gap-6 mt-[60px]">

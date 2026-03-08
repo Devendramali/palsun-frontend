@@ -1,7 +1,6 @@
 import {Phone} from "lucide-react"
 
 const BigCards = ({data}) => {
-  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
   return (
     <>
     <div className='py-4 md:min-w-[340px] min-w-[100%] text-center bg-[#fff] px-8 py-8 rounded-[24px] shadow-[0px_0px_12px_#bfbfbf]' >
