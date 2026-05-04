@@ -205,7 +205,7 @@ const Home = () => {
                   </p>
                   <p className="text-[13px] sm:text-[14px] md:text-[15px] lg:text-base">
                     <span className="font-bold text-orange-400">
-                      0 +
+                     1547 +
                     </span>
                     गावाची लोकसंख्या
                   </p>
